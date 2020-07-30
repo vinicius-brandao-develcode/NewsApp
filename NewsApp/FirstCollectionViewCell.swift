@@ -12,7 +12,6 @@ class FirstCollectionViewCell: UICollectionViewCell {
     
     var index : IndexPath?
     
-
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabelFC: UILabel!
     @IBOutlet weak var descLabelFC: UILabel!

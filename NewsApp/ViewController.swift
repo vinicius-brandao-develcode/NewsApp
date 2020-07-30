@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var firstCollectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
@@ -367,35 +367,39 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         firstCollectionView.dataSource = self
         secondCollectionView.dataSource = self
         
-    }
+
         
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let potato2 = viewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
         
         if collectionView == firstCollectionView{
-         let potato = viewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
+            let potato = viewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
             
             potato.cellPassImage    = images      [indexPath.row]
             potato.titlePassString  = titleTextElements[indexPath.row]
             potato.textPassString   = descTextArr [indexPath.row]
             potato.authorPassString = authorArr   [indexPath.row]
             
-        self.navigationController?.pushViewController(potato, animated: true)
-        present(potato, animated: true)
+            self.navigationController?.pushViewController(potato, animated: true)
+            present(potato, animated: true)
             
-        print("scorro")
+            
         } else {
-        
-        potato2.cellPassImage    = imageForCell     [indexPath.row]
-        potato2.titlePassString  = titleForCell     [indexPath.row]
-        potato2.textPassString   = descForCell      [indexPath.row]
-        potato2.authorPassString = authorAndDataCont[indexPath.row]
-        
-        self.navigationController?.pushViewController(potato2, animated: true)
-        present(potato2, animated: true)
-        print("meudeuscaravaiusefude")
+            
+            potato2.cellPassImage    = imageForCell     [indexPath.row]
+            potato2.titlePassString  = titleForCell     [indexPath.row]
+            potato2.textPassString   = descForCell      [indexPath.row]
+            potato2.authorPassString = authorAndDataCont[indexPath.row]
+            
+            self.navigationController?.pushViewController(potato2, animated: true)
+            present(potato2, animated: true)
+            
+            
+        }
     }
-}
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == firstCollectionView){
             return images.count
@@ -409,29 +413,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let firstCell = firstCollectionView.dequeueReusableCell(withReuseIdentifier: "firstCell", for: indexPath) as! FirstCollectionViewCell
         
         if collectionView == firstCollectionView {
-
-        firstCell.imageView.image = UIImage(named: images[indexPath.row])
-        firstCell.titleLabelFC.text = titleTextElements[indexPath.row]
-        firstCell.descLabelFC.text = descTextArr[indexPath.row]
-        firstCell.authorLabelFC.text = authorArr[indexPath.row]
-        
+            
+            firstCell.imageView.image = UIImage(named: images[indexPath.row])
+            firstCell.titleLabelFC.text = titleTextElements[indexPath.row]
+            firstCell.descLabelFC.text = descTextArr[indexPath.row]
+            firstCell.authorLabelFC.text = authorArr[indexPath.row]
+            
             return firstCell
-        
+            
         } else {
-        
+            
             let secondCell = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "secondCell", for: indexPath) as! SecondCollectionViewCell
             
-                secondCell.imageViewSC.image = UIImage(named: imageForCell[indexPath.row])
-                secondCell.titleLabelSC.text = titleForCell[indexPath.row]
-                secondCell.descLabelSC.text = descForCell[indexPath.row]
-                secondCell.authorLabelSC.text = authorAndDataCont[indexPath.row]
-
+            secondCell.imageViewSC.image = UIImage(named: imageForCell[indexPath.row])
+            secondCell.titleLabelSC.text = titleForCell[indexPath.row]
+            secondCell.descLabelSC.text = descForCell[indexPath.row]
+            secondCell.authorLabelSC.text = authorAndDataCont[indexPath.row]
+            
             return secondCell
+        }
     }
-}
-        
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         if collectionView == firstCollectionView {
             
             return CGSize(width: 414, height: 403)
@@ -440,9 +444,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
             return CGSize(width: 414, height: 132)
             
+        }
     }
-}
-    //(width: 414, height: 132)
     
     
     func viewController(withStoryboarName storyboarName: String, _ viewControllerName: String) -> UIViewController {
@@ -451,6 +454,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return storyboard.instantiateViewController(withIdentifier: viewControllerName)
     }
 }
+
 //    @IBAction func readMoreBtn(_ sender: Any) {
 //
 //        let aboutVC = ViewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
@@ -460,4 +464,3 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //
 //        present(aboutVC, animated: true)
 //}
-

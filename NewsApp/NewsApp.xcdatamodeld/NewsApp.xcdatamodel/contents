@@ -1,21 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
-        <attribute name="thumb" optional="YES" attributeType="Transformable"/>
-        <relationship name="toAuthor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="News"/>
-        <relationship name="toContent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="News"/>
-        <relationship name="toDate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="News" inverseName="toImage" inverseEntity="News"/>
-        <relationship name="toTitle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="News"/>
-    </entity>
-    <entity name="News" representedClassName="News" syncable="YES" codeGenerationType="class">
-        <attribute name="author" optional="YES" attributeType="String"/>
-        <attribute name="content" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="toImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="toDate" inverseEntity="Image"/>
-    </entity>
-    <elements>
-        <element name="Image" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="News" positionX="-54" positionY="-9" width="128" height="118"/>
-    </elements>
+    <elements/>
 </model>

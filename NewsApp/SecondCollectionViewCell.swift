@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class SecondCollectionViewCell: UICollectionViewCell {
     
     var index : IndexPath?
@@ -16,7 +15,5 @@ class SecondCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageViewSC: UIImageView!
     @IBOutlet weak var titleLabelSC: UILabel!
     @IBOutlet weak var descLabelSC: UILabel!
-    @IBOutlet weak var authorLabelSC: UILabel!
-    
-    
+    @IBOutlet weak var authorLabelSC: UILabel! 
 }

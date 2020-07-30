@@ -29,11 +29,11 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         newsImageView.image = UIImage(named:cellPassImage)
         titleLabelText.text = titlePassString
         newsTextView.text = textPassString
         authorLabelText.text = authorPassString
+        
     }
 }
 
