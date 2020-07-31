@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NewsCells" representedClassName="NewsCells" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Transformable"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SecondView" representedClassName="SecondView" syncable="YES" codeGenerationType="class">
+        <attribute name="toAuthor" optional="YES" attributeType="String"/>
+        <attribute name="toContent" optional="YES" attributeType="String"/>
+        <attribute name="toImage" optional="YES" attributeType="Transformable"/>
+        <attribute name="toTitle" optional="YES" attributeType="String"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify"/>
+    </entity>
+    <elements>
+        <element name="NewsCells" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="SecondView" positionX="-45" positionY="27" width="128" height="118"/>
+    </elements>
+</model>

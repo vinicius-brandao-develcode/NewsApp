@@ -21,7 +21,7 @@ class AboutViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    var cellPassImage = ""
+    var cellPassImage: String = ""
     var titlePassString: String = ""
     var textPassString: String = ""
     var authorPassString: String = ""
@@ -29,13 +29,10 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        newsImageView.image = UIImage(named:cellPassImage)
-        titleLabelText.text = titlePassString
-        newsTextView.text = textPassString
+        newsImageView.image  = UIImage(named:cellPassImage)
+        titleLabelText.text  = titlePassString
+        newsTextView.text    = textPassString
         authorLabelText.text = authorPassString
         
     }
 }
-
-// Referente a passagem da imagem do scrollview que esta sendo apresentada junto a label/text
-// No main viewController uma scroll view, e no AboutViewController uma UIImageView

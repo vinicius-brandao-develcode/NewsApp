@@ -29,7 +29,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstCell" translatesAutoresizingMaskIntoConstraints="NO" id="w0k-Zb-LkG" customClass="FirstCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstCell" translatesAutoresizingMaskIntoConstraints="NO" id="w0k-Zb-LkG" userLabel="E" customClass="FirstCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="3" width="414" height="403"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aGb-ON-0Mk">
@@ -78,6 +78,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.19" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="L2H-mt-96o" firstAttribute="leading" secondItem="aGb-ON-0Mk" secondAttribute="leading" constant="406" id="0vy-cU-fxy"/>
                                                         <constraint firstItem="GUB-Th-uhc" firstAttribute="leading" secondItem="aGb-ON-0Mk" secondAttribute="leading" constant="20" id="1cH-eC-I7W"/>
@@ -101,7 +102,8 @@
                                                         <constraint firstAttribute="trailing" secondItem="KpO-n5-fu0" secondAttribute="trailing" constant="20" id="yHa-IQ-xfs"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
-                                                <color key="backgroundColor" white="0.080000000000000002" alpha="0.84705882352941175" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.19405500856164384" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.16" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="414" height="403"/>
                                                 <connections>
                                                     <outlet property="authorLabelFC" destination="L2H-mt-96o" id="fVF-C2-qcf"/>
@@ -126,7 +128,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="secondCell" id="vzU-WB-cf2" customClass="SecondCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="firstCell" id="vzU-WB-cf2" customClass="FirstCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eie-HZ-eQ3">
@@ -149,7 +151,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwY-ws-9XY">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwY-ws-9XY">
                                                             <rect key="frame" x="118" y="50" width="286" height="53"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="53" id="DWJ-lr-otb"/>
@@ -188,10 +190,10 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="414" height="132"/>
                                                 <connections>
-                                                    <outlet property="authorLabelSC" destination="Yla-BW-Io7" id="osf-M6-OBy"/>
-                                                    <outlet property="descLabelSC" destination="DwY-ws-9XY" id="ER3-DK-7cQ"/>
-                                                    <outlet property="imageViewSC" destination="mLy-v5-iPA" id="CF8-ff-TqX"/>
-                                                    <outlet property="titleLabelSC" destination="Qz2-2O-uNa" id="BgA-Tu-RZg"/>
+                                                    <outlet property="authorLabelFC" destination="Yla-BW-Io7" id="Bo6-eV-jwF"/>
+                                                    <outlet property="descLabelFC" destination="DwY-ws-9XY" id="sXa-D8-C8G"/>
+                                                    <outlet property="imageView" destination="mLy-v5-iPA" id="oys-5j-cOA"/>
+                                                    <outlet property="titleLabelFC" destination="Qz2-2O-uNa" id="ldh-Ir-oM2"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -270,7 +272,7 @@
                                             <constraint firstAttribute="height" constant="20" id="pCW-uk-Oha"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MzS-xE-d0k">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2_cell" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MzS-xE-d0k">
                                         <rect key="frame" x="20" y="50" width="374" height="163"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="163" id="FQc-oy-N5K"/>
@@ -351,6 +353,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2_cell" width="1300" height="867"/>
         <image name="x" width="50" height="50"/>
     </resources>
 </document>

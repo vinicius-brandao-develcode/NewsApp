@@ -7,28 +7,28 @@
 //
 
 import UIKit
-import CoreData
+
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var firstCollectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
     
-    var images: [String] = ["0","1","2","3"]
+    var imagesForFC: [String] = ["0","1","2","3"]
     
-    let titleTextElements: [String] =
-                        [("Europe warns of need for vigilance as Covid-19 cases rise sharply"),
-                         ("China orders US consulate in Chengdu to close as tensions rise"),
-                         ("'A critical situation': Bangladesh in crisis as monsoon floods follow super-cyclone "),
-                         ("Blockbuster movies delayed again by new coronavirus spikes")]
-    let authorArr =
-                    [("By Sam Jones, Kim Willsher, Kate Connolly and agencies at Fri 24 Jul 2020 16.55 BST"),
-                     ("By Kamil Ahmed at Fri 24 Jul 2020 06.30 BST"),
-                     ("By Lily Kuo in Beijing At Fri 24 Jul 2020 11.00 BST"),
-                     ("By Catherine Shoard At Fri 24 Jul 2020 12.27 BST")]
+    let titleForFC: [String] =
+                            [("Europe warns of need for vigilance as Covid-19 cases rise sharply"),
+                             ("China orders US consulate in Chengdu to close as tensions rise"),
+                             ("'A critical situation': Bangladesh in crisis as monsoon floods follow super-cyclone "),
+                             ("Blockbuster movies delayed again by new coronavirus spikes")]
+    let authorForFC: [String] =
+                            [("By Sam Jones, Kim Willsher, Kate Connolly and agencies at Fri 24 Jul 2020 16.55 BST"),
+                             ("By Kamil Ahmed at Fri 24 Jul 2020 06.30 BST"),
+                             ("By Lily Kuo in Beijing At Fri 24 Jul 2020 11.00 BST"),
+                             ("By Catherine Shoard At Fri 24 Jul 2020 12.27 BST")]
     
-    let descTextArr =
-                        [("""
+    let detailForFC: [String] =
+                            [("""
                             Spanish health officials have warned the country could already be experiencing a “second wave” of coronavirus, as France, Germany and Belgium all reported steep rises in their number of cases.
 
                             Countries across Europe have reminded people of the need for vigilance amid rising cases as the summer holiday season continues.
@@ -85,8 +85,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                             “It’s true that it’s rare that a young person dies of Covid-19, but it’s clear that no one is immune,” he said.
 
                             Agence France-Presse contributed to this report
-                        """),
-                         ("""
+                            """),
+                            ("""
                             Beijing has ordered the closure of a US consulate in south-western China, in a move that escalates tensions between the two countries to a new level.
 
                             On Friday, China’s ministry of foreign affairs said it had ordered the US consulate in Chengdu, in Sichuan province, to cease all operations. Authorities notified the US of China’s decision to revoke its consent for the consulate to operate, according to a notice on the ministry’s website.
@@ -139,227 +139,244 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
                             “Confrontation is not good, it affects the economy. It affects everyone,” one user said.
                             """),
-                         ("""
-                         Bangladesh could be plunged into a humanitarian crisis as it undergoes the most prolonged monsoon flooding in decades while it is still recovering from the effects of super-cyclone Amphan.
+                            ("""
+                            Bangladesh could be plunged into a humanitarian crisis as it undergoes the most prolonged monsoon flooding in decades while it is still recovering from the effects of super-cyclone Amphan.
 
-                         Despite the UN has lauding its new initiatives for early intervention aimed at preparing communities for crisis, 550 people have been killed and 9.6 million affected by the disaster in Bangladesh, Nepal and north-eastern India, according to the International Federation of the Red Cross and Red Crescent.
+                            Despite the UN has lauding its new initiatives for early intervention aimed at preparing communities for crisis, 550 people have been killed and 9.6 million affected by the disaster in Bangladesh, Nepal and north-eastern India, according to the International Federation of the Red Cross and Red Crescent.
 
-                         Bangladesh’s ministry for natural disasters has estimated that a third of the country is already underwater, with heavy rains set to continue until the end of July. The UN has estimated that this flooding could be the most protracted since 1988.
+                            Bangladesh’s ministry for natural disasters has estimated that a third of the country is already underwater, with heavy rains set to continue until the end of July. The UN has estimated that this flooding could be the most protracted since 1988.
 
-                         Rezaul Karim Chowdhury, executive director of the Bangladeshi NGO Coast, said the country was far more prepared for flooding than in the past, but that populations in flooded areas might end up in dire need because of a combination of existing localised and national crises.
+                            Rezaul Karim Chowdhury, executive director of the Bangladeshi NGO Coast, said the country was far more prepared for flooding than in the past, but that populations in flooded areas might end up in dire need because of a combination of existing localised and national crises.
 
-                         He said incomes had already been hit by the government’s closure of 25 state-owned jute mills, mostly in northern areas that have been flooded, and by the Covid-19 pandemic.
+                            He said incomes had already been hit by the government’s closure of 25 state-owned jute mills, mostly in northern areas that have been flooded, and by the Covid-19 pandemic.
 
-                         “The country has been locked down for four months and that has had a serious impact. Forty per cent of rural income was coming from urban areas and then suddenly labourers and rickshaw pullers weren’t sending money home,” said Chowdhury.
+                            “The country has been locked down for four months and that has had a serious impact. Forty per cent of rural income was coming from urban areas and then suddenly labourers and rickshaw pullers weren’t sending money home,” said Chowdhury.
 
-                         “Almost a third of the population has dropped under the poverty line. This will have an impact on food security and purchasing power, this is a critical situation we have to overcome.”
+                            “Almost a third of the population has dropped under the poverty line. This will have an impact on food security and purchasing power, this is a critical situation we have to overcome.”
 
-                         He said local organisations had exhausted funds responding to the pandemic so the UN and international organisations would need to step in, especially to support farmers whose crops may be damaged before the August rice harvest.
+                            He said local organisations had exhausted funds responding to the pandemic so the UN and international organisations would need to step in, especially to support farmers whose crops may be damaged before the August rice harvest.
 
-                         The UN said it had been trying to pre-empt damage to livelihoods by predicting where support needed to be sent ahead of time, using advances in data and forecasting analytics.
+                            The UN said it had been trying to pre-empt damage to livelihoods by predicting where support needed to be sent ahead of time, using advances in data and forecasting analytics.
 
-                         That had allowed the release of relief worth $5.2m (£4m) from its reserve fund for humanitarian emergencies to counter severe flooding over the past week in the form of cash, hygiene and health kits, and equipment to protect farmers’ materials from water damage.
+                            That had allowed the release of relief worth $5.2m (£4m) from its reserve fund for humanitarian emergencies to counter severe flooding over the past week in the form of cash, hygiene and health kits, and equipment to protect farmers’ materials from water damage.
 
-                         The UN under-secretary-general for humanitarian affairs and emergency relief coordinator, Mark Lowcock, said the organisation should no longer be taken by surprise when disasters hit.
+                            The UN under-secretary-general for humanitarian affairs and emergency relief coordinator, Mark Lowcock, said the organisation should no longer be taken by surprise when disasters hit.
 
-                         “Doing something before crises hit can save more lives and costs less money. Plus it’s far more dignified for the people we’re helping,” he said.
+                            “Doing something before crises hit can save more lives and costs less money. Plus it’s far more dignified for the people we’re helping,” he said.
 
-                         “If we know a flood is about to hit, why wouldn’t we give river communities the means to get themselves, their livestock and their tools out of harm’s way before the deluge comes, instead of waiting until they’ve lost everything, then try and help?”
+                            “If we know a flood is about to hit, why wouldn’t we give river communities the means to get themselves, their livestock and their tools out of harm’s way before the deluge comes, instead of waiting until they’ve lost everything, then try and help?”
 
-                         Sheikh Rokon, founder of the campaign group Riverine People, said the monsoon was essential to life in Bangladesh, recharging water levels and giving life to seasonal wetlands, but that environmental changes were making life harder for communities.
+                            Sheikh Rokon, founder of the campaign group Riverine People, said the monsoon was essential to life in Bangladesh, recharging water levels and giving life to seasonal wetlands, but that environmental changes were making life harder for communities.
 
-                         “River erosion makes the situation worse. They lose everything but hope and have to struggle for days. This year, riverine communities across the Brahmaputra and Teesta river basins are facing severe erosion,” he said. “A very small riverine community, the water Gypsy, live in the rivers, on boats. Floods makes their life and livelihoods harder.”
+                            “River erosion makes the situation worse. They lose everything but hope and have to struggle for days. This year, riverine communities across the Brahmaputra and Teesta river basins are facing severe erosion,” he said. “A very small riverine community, the water Gypsy, live in the rivers, on boats. Floods makes their life and livelihoods harder.”
 
-                         Rokon said communities usually had little time to prepare, which usually involves moving their belongings to areas protected by embankments.
+                            Rokon said communities usually had little time to prepare, which usually involves moving their belongings to areas protected by embankments.
 
-                         The World Food Programme’s executive director, David Beasley, said improving planning to act on forecasts would help families in the long run.
+                            The World Food Programme’s executive director, David Beasley, said improving planning to act on forecasts would help families in the long run.
 
-                         “Year after year, floods devastate Bangladesh. The waters not only swallow up homes and lives but with them progress and hope for the Bangladeshi people,” said Beasley. “I cannot stress enough how important it is to equip communities to prepare and protect themselves against such disasters.”
-                        """),
-                         ("""
-                         Hopes for a speedy substantial resurgence at the global box office were dashed as Disney and Paramount made substantial changes to their release schedules. Mulan, the live-action remake that had been scheduled to open in August after a string of delays, has now been removed from the schedule entirely, pending a new date.
+                            “Year after year, floods devastate Bangladesh. The waters not only swallow up homes and lives but with them progress and hope for the Bangladeshi people,” said Beasley. “I cannot stress enough how important it is to equip communities to prepare and protect themselves against such disasters.”
+                            """),
+                            ("""
+                            Hopes for a speedy substantial resurgence at the global box office were dashed as Disney and Paramount made substantial changes to their release schedules. Mulan, the live-action remake that had been scheduled to open in August after a string of delays, has now been removed from the schedule entirely, pending a new date.
 
-                         Its fate echoes that of Tenet, which had also been positioned as a key title launching a summer revival in cinemas. Earlier this week, Warner Bros removed the Christopher Nolan sci-fi from the diary, citing concerns over whether sufficient numbers of cinemas would be able to reopen in time for a summer release.
+                            Its fate echoes that of Tenet, which had also been positioned as a key title launching a summer revival in cinemas. Earlier this week, Warner Bros removed the Christopher Nolan sci-fi from the diary, citing concerns over whether sufficient numbers of cinemas would be able to reopen in time for a summer release.
 
-                         In a statement about Mulan’s move, Disney linked the change to fresh coronavirus spikes, leading many to suggest the studio was prioritising the US market over international territories, given that many of them are now back up and running.
+                            In a statement about Mulan’s move, Disney linked the change to fresh coronavirus spikes, leading many to suggest the studio was prioritising the US market over international territories, given that many of them are now back up and running.
 
-                         Paramount’s slate changes involve further delays to the release of Top Gun: Maverick, which sees a belated return for Tom Cruise’s flying ace, and to A Quiet Place 2, the sequel to the 2017 horror hit, which was one of the first big casualties of the lockdown in March.
+                            Paramount’s slate changes involve further delays to the release of Top Gun: Maverick, which sees a belated return for Tom Cruise’s flying ace, and to A Quiet Place 2, the sequel to the 2017 horror hit, which was one of the first big casualties of the lockdown in March.
 
-                         Both films are now being released more than a year after their original launch dates, with the former opening in July 2021 and the latter in April.
+                            Both films are now being released more than a year after their original launch dates, with the former opening in July 2021 and the latter in April.
 
-                         Disney also announced a new plan for its forthcoming Avatar sequels and Star Wars spinoff movies, with four Avatars scheduled for the Christmas holidays biannually between 2022 and 2028 and three Star Wars films arriving every other year from 2023.
+                            Disney also announced a new plan for its forthcoming Avatar sequels and Star Wars spinoff movies, with four Avatars scheduled for the Christmas holidays biannually between 2022 and 2028 and three Star Wars films arriving every other year from 2023.
 
-                         The French Dispatch, one of the titles Disney inherited from Fox Searchlight, has also been removed from the calendars. Wes Anderson’s comedy was to have premiered at Cannes earlier this year. Meanwhile, Ridley Scott’s medieval drama The Last Duel starring Christian Bale and Matt Damon has moved from this Christmas to October 2021.
+                            The French Dispatch, one of the titles Disney inherited from Fox Searchlight, has also been removed from the calendars. Wes Anderson’s comedy was to have premiered at Cannes earlier this year. Meanwhile, Ridley Scott’s medieval drama The Last Duel starring Christian Bale and Matt Damon has moved from this Christmas to October 2021.
 
-                         But the studio has kept some tentpole releases in the mix for this year, including Black Widow (due 6 November), Death on the Nile (23 October) and Steven Spielberg’s West Side Story (18 December).
+                            But the studio has kept some tentpole releases in the mix for this year, including Black Widow (due 6 November), Death on the Nile (23 October) and Steven Spielberg’s West Side Story (18 December).
 
-                         Still set for November is No Time to Die, the 25th James Bond film. Universal’s film was the first picture to have its release dramatically delayed as the pandemic spread; the studio recently moved the US release date forward five days, to 20 November. The UK date remains 12 November.
-                         """)]
-    let titleForCell =
-                        [("Trump is using federal agents as his 'goon squad', says Ice's ex-acting head "),
-                        ("Top lawyer accused of relaying offer of £1m 'bribe' to police, say court transcripts "),
-                        ("'A wicked enemy': how Australia's coronavirus success story unravelled ")]
-    let descForCell =
-                        [("""
-                        John Sandweg says the deployment of homeland security officials is a ‘manufactured crisis’ stemming from ‘a failure of leadership’
+                            Still set for November is No Time to Die, the 25th James Bond film. Universal’s film was the first picture to have its release dramatically delayed as the pandemic spread; the studio recently moved the US release date forward five days, to 20 November. The UK date remains 12 November.
+                            """)]
+    let titleForSC: [String] =
+                            [("Trump is using federal agents as his 'goon squad', says Ice's ex-acting head "),
+                            ("Top lawyer accused of relaying offer of £1m 'bribe' to police, say court transcripts "),
+                            ("'A wicked enemy': how Australia's coronavirus success story unravelled ")]
+    let detailForSC: [String] =
+                            [("""
+                            John Sandweg says the deployment of homeland security officials is a ‘manufactured crisis’ stemming from ‘a failure of leadership’
 
-                        The former acting director of the US Immigration and Customs Enforcement agency, which works under the Department of Homeland Security, has condemned the Trump administration’s handling of protests in Portland by deploying federal agents into the city.
+                            The former acting director of the US Immigration and Customs Enforcement agency, which works under the Department of Homeland Security, has condemned the Trump administration’s handling of protests in Portland by deploying federal agents into the city.
 
-                        John Sandweg, the former acting director of Ice, who also served as general counsel for the DHS, said Donald Trump was using the agency as his own “goon squad” by sending federal law enforcement agents to Oregon’s biggest city and vowing to send more to other cities around the country, including Chicago and Albuquerque.
+                            John Sandweg, the former acting director of Ice, who also served as general counsel for the DHS, said Donald Trump was using the agency as his own “goon squad” by sending federal law enforcement agents to Oregon’s biggest city and vowing to send more to other cities around the country, including Chicago and Albuquerque.
 
-                        Sandweg, in a wide-ranging interview with the Guardian, called the administration’s policy a “failure of leadership in the Trump administration”.
+                            Sandweg, in a wide-ranging interview with the Guardian, called the administration’s policy a “failure of leadership in the Trump administration”.
 
-                        He added: “I think it’s an abuse of DHS. I mean really the president’s trying to use DHS as his goon squad. That’s really what’s going on here.”
+                            He added: “I think it’s an abuse of DHS. I mean really the president’s trying to use DHS as his goon squad. That’s really what’s going on here.”
 
-                        The comments by Sandweg come as unidentified federal officials clashed again in Portland with protesters calling for reforms to the local police. On Wednesday the mayor of Portland, Ted Wheeler, joined protesters. He was teargassed along with others in the crowd. The federal agents have been accused of lifting people off the streets in unmarked cars, as well as deploying military-style uniforms and equipment as they battle demonstrators nightly in the city.
+                            The comments by Sandweg come as unidentified federal officials clashed again in Portland with protesters calling for reforms to the local police. On Wednesday the mayor of Portland, Ted Wheeler, joined protesters. He was teargassed along with others in the crowd. The federal agents have been accused of lifting people off the streets in unmarked cars, as well as deploying military-style uniforms and equipment as they battle demonstrators nightly in the city.
 
-                        Sandweg went on to offer scathing criticism of the administration’s handling of the protests, calling it a “manufactured crisis” driven by politics from the president.
+                            Sandweg went on to offer scathing criticism of the administration’s handling of the protests, calling it a “manufactured crisis” driven by politics from the president.
 
-                        “In my experience, this is not coming from the workforce. I think there’s a lot of misconceptions out there that I hope that I can at least clear up,” Sandweg said. “DHS has not so much been unleashed as pushed to do these kinds of things. In my experience the folks that I’ve worked with want to protect national security and public safety.”
+                            “In my experience, this is not coming from the workforce. I think there’s a lot of misconceptions out there that I hope that I can at least clear up,” Sandweg said. “DHS has not so much been unleashed as pushed to do these kinds of things. In my experience the folks that I’ve worked with want to protect national security and public safety.”
 
-                        Sandweg also pointed to the department’s acting director, Chad Wolf, who has been seen as a driving force behind the deployment which has outraged Democrats, some Republicans and many civil rights groups.
+                            Sandweg also pointed to the department’s acting director, Chad Wolf, who has been seen as a driving force behind the deployment which has outraged Democrats, some Republicans and many civil rights groups.
 
-                        “You have an acting secretary, if you will, who is in a very precarious position in that a number of his predecessors did not have that long a tenure, who I think is eager to please,” Sandweg said.
+                            “You have an acting secretary, if you will, who is in a very precarious position in that a number of his predecessors did not have that long a tenure, who I think is eager to please,” Sandweg said.
 
-                        Sandweg said the case for federal law enforcement officers to guard federal buildings was pretty strong in principle.
+                            Sandweg said the case for federal law enforcement officers to guard federal buildings was pretty strong in principle.
 
-                        “From a general position of course the federal government has a right to enforce federal law anywhere in the United States,” Sandweg said. “But again there’s a right way to do that and a wrong way. And what we’re seeing here is the kind of thing that is going to have devastating effects for DHS and its operating agencies for a long time to come.”
+                            “From a general position of course the federal government has a right to enforce federal law anywhere in the United States,” Sandweg said. “But again there’s a right way to do that and a wrong way. And what we’re seeing here is the kind of thing that is going to have devastating effects for DHS and its operating agencies for a long time to come.”
 
-                        Asked to compare how the DHS is being used compared with during Barack Obama’s presidency, Sandweg said there was a big difference.
+                            Asked to compare how the DHS is being used compared with during Barack Obama’s presidency, Sandweg said there was a big difference.
 
-                        “It makes an incredible contrast. Listen, our overarching goal was to be effective. To do effective law enforcement work, to effectively secure the border, to promote public safety and national security, you have to have a great partnership with state and locals. And politics didn’t matter. The politics didn’t matter if you were Republican or Democrat,” Sandweg said, adding that the contrast also extended to the George Bush administration in the early 2000s.
+                            “It makes an incredible contrast. Listen, our overarching goal was to be effective. To do effective law enforcement work, to effectively secure the border, to promote public safety and national security, you have to have a great partnership with state and locals. And politics didn’t matter. The politics didn’t matter if you were Republican or Democrat,” Sandweg said, adding that the contrast also extended to the George Bush administration in the early 2000s.
 
-                        Both of Oregon’s senators and other members of the state’s congressional delegation have called for an investigation into the administration’s handling of the protests.
+                            Both of Oregon’s senators and other members of the state’s congressional delegation have called for an investigation into the administration’s handling of the protests.
 
-                        Meanwhile, Governor Kate Brown said at a press conference on Wednesday: “This is a democracy, not a dictatorship. We cannot have secret police abducting people and putting them into unmarked vehicles. I cannot believe I have to say that to the president of the United States.”
+                            Meanwhile, Governor Kate Brown said at a press conference on Wednesday: “This is a democracy, not a dictatorship. We cannot have secret police abducting people and putting them into unmarked vehicles. I cannot believe I have to say that to the president of the United States.”
 
-                        In recent years some Democrats have argued for a major overhaul of federal bodies such as Ice or the DHS. Sandweg worried that if Joe Biden were elected president he might face significant pressure to makes drastic changes.
+                            In recent years some Democrats have argued for a major overhaul of federal bodies such as Ice or the DHS. Sandweg worried that if Joe Biden were elected president he might face significant pressure to makes drastic changes.
 
-                        “What concerns me is that there’s going to be a lot of pressure on a President Biden to make really drastic reforms to DHS,” Sandweg said. “I don’t personally think those reforms are necessary. I think this is a crisis of leadership. A failure of leadership in the Trump administration. I think it’s an abuse of DHS.”
+                            “What concerns me is that there’s going to be a lot of pressure on a President Biden to make really drastic reforms to DHS,” Sandweg said. “I don’t personally think those reforms are necessary. I think this is a crisis of leadership. A failure of leadership in the Trump administration. I think it’s an abuse of DHS.”
 
-                        Sandweg added: “It’s a failure of leadership and at the end of the day here and the key thing is that they get a good, seasoned, good hand here to get DHS to return back to the culture of where DHS wants to be as an agency."
-                        """),
-                         
-                         ("""
-                         A lawyer at one of the UK’s most prestigious law firms has been accused of relaying an offer of a £1m “bribe” to police officers as part of a bizarre plot to release €300m (£274m) hidden in a Swiss bank account, according to court transcripts obtained by the Guardian.
+                            Sandweg added: “It’s a failure of leadership and at the end of the day here and the key thing is that they get a good, seasoned, good hand here to get DHS to return back to the culture of where DHS wants to be as an agency."
+                            """),
 
-                         Mike Stubbs, a partner at Mishcon de Reya, allegedly told two Metropolitan police detectives that a former SAS sergeant with intelligence contacts had concocted a plan to release what were described as “CIA funds” being held in the Swiss bank for “covert” purposes in Somalia.
+                            ("""
+                            A lawyer at one of the UK’s most prestigious law firms has been accused of relaying an offer of a £1m “bribe” to police officers as part of a bizarre plot to release €300m (£274m) hidden in a Swiss bank account, according to court transcripts obtained by the Guardian.
 
-                         According to the transcripts, Stubbs told the detectives the intelligence operative was proposing to pay a portion of the money into a police pension fund. The detectives allegedly “strongly rebuffed” the proposal and told Stubbs “in clear and strongly worded terms” that the offer he was relaying was “interpreted as a bribe”.
+                            Mike Stubbs, a partner at Mishcon de Reya, allegedly told two Metropolitan police detectives that a former SAS sergeant with intelligence contacts had concocted a plan to release what were described as “CIA funds” being held in the Swiss bank for “covert” purposes in Somalia.
 
-                         Details of the encounter between Stubbs and the detectives emerged during hearings at Southwark crown court in London last December and related to the trial of Othman Louanjli, a French banker.
+                            According to the transcripts, Stubbs told the detectives the intelligence operative was proposing to pay a portion of the money into a police pension fund. The detectives allegedly “strongly rebuffed” the proposal and told Stubbs “in clear and strongly worded terms” that the offer he was relaying was “interpreted as a bribe”.
 
-                         During the trial, but in the absence of the jury, lawyers for Louanjli applied to introduce as evidence a report filed on the Met’s internal intelligence sharing system, Crimint, in which the two detectives provided their account of the meeting with Stubbs in 2013.
+                            Details of the encounter between Stubbs and the detectives emerged during hearings at Southwark crown court in London last December and related to the trial of Othman Louanjli, a French banker.
 
-                         The court heard that the Crimint report, which was filed a month after the meeting, stated Stubbs twice relayed the intelligence operative’s offer to the police as part of an elaborate proposal to trick a suspect in a fraud investigation into travelling to Switzerland to release the €300m using special access codes. The proposal was not taken up.
+                            During the trial, but in the absence of the jury, lawyers for Louanjli applied to introduce as evidence a report filed on the Met’s internal intelligence sharing system, Crimint, in which the two detectives provided their account of the meeting with Stubbs in 2013.
 
-                         The judge in the trial, David Tomlinson, summarised the offer to pay money to the police as an “inducement by way of £1m”, but did not make any adverse findings against Stubbs and ultimately ruled against admitting the Crimint report as evidence.
+                            The court heard that the Crimint report, which was filed a month after the meeting, stated Stubbs twice relayed the intelligence operative’s offer to the police as part of an elaborate proposal to trick a suspect in a fraud investigation into travelling to Switzerland to release the €300m using special access codes. The proposal was not taken up.
 
-                         However, the judge said Stubbs appeared to think the plan to release the supposed CIA funds was “a clever idea” and described the senior lawyer’s alleged conversations with the police as “extraordinary”.
+                            The judge in the trial, David Tomlinson, summarised the offer to pay money to the police as an “inducement by way of £1m”, but did not make any adverse findings against Stubbs and ultimately ruled against admitting the Crimint report as evidence.
 
-                         “The whole thing is bizarre. I mean, there are all sorts of problems with it,” the judge remarked. “There are all sorts of questions one can imagine one might ask Mike Stubbs if only to show him how harebrained the idea is.” The police, the judge added, “simply blew the whole idea out of the water both times it was suggested, which was the responsible thing to do”.
+                            However, the judge said Stubbs appeared to think the plan to release the supposed CIA funds was “a clever idea” and described the senior lawyer’s alleged conversations with the police as “extraordinary”.
 
-                         Stubbs, 64, is a veteran lawyer at Mishcon de Reya, an elite London firm. When the Guardian contacted him by phone, he denied any knowledge of the plot to release funds from Switzerland. “I’ve never heard of this,” he said. “It’s complete nonsense.”
+                            “The whole thing is bizarre. I mean, there are all sorts of problems with it,” the judge remarked. “There are all sorts of questions one can imagine one might ask Mike Stubbs if only to show him how harebrained the idea is.” The police, the judge added, “simply blew the whole idea out of the water both times it was suggested, which was the responsible thing to do”.
 
-                         Describing himself as “a very straightforward lawyer”, Stubbs dismissed the allegations as “bonkers” and told a Guardian reporter: “I think this is manufactured by somebody, possibly by you.” He repeatedly insisted the meeting with the detectives never took place.
+                            Stubbs, 64, is a veteran lawyer at Mishcon de Reya, an elite London firm. When the Guardian contacted him by phone, he denied any knowledge of the plot to release funds from Switzerland. “I’ve never heard of this,” he said. “It’s complete nonsense.”
 
-                         In a subsequent letter, Mishcon de Reya clarified that Stubbs did in fact hold a meeting with the police in 2013 and said it was “unsurprising” he was unable to immediately recall the details in an “unsolicited telephone call” before checking contemporaneous documents.
+                            Describing himself as “a very straightforward lawyer”, Stubbs dismissed the allegations as “bonkers” and told a Guardian reporter: “I think this is manufactured by somebody, possibly by you.” He repeatedly insisted the meeting with the detectives never took place.
 
-                         The firm said Stubbs met the detectives while acting on client instructions to liaise with the Met and provide any information to officers so they could assess its credibility. Stubbs, the firm said, “simply relayed” to the police the proposal suggested to him by the intelligence operative without endorsing it. The Met declined to comment.
+                            In a subsequent letter, Mishcon de Reya clarified that Stubbs did in fact hold a meeting with the police in 2013 and said it was “unsurprising” he was unable to immediately recall the details in an “unsolicited telephone call” before checking contemporaneous documents.
 
-                         Louanjli, a former banker at Liechtensteinische Landesbank, was found guilty of fraud and money laundering charges in December. The case was connected to a financial scam that defrauded a Dutch shipbuilding company, Allseas, out of €100m in 2011.
+                            The firm said Stubbs met the detectives while acting on client instructions to liaise with the Met and provide any information to officers so they could assess its credibility. Stubbs, the firm said, “simply relayed” to the police the proposal suggested to him by the intelligence operative without endorsing it. The Met declined to comment.
 
-                         Louanjli was found to have assisted Luis Nobre, a Portuguese confidence trickster who was at the heart of the plot to defraud Allseas. Nobre, who posed as a City trader with links to the Vatican, was imprisoned in 2016 for his role in the fraud.
+                            Louanjli, a former banker at Liechtensteinische Landesbank, was found guilty of fraud and money laundering charges in December. The case was connected to a financial scam that defrauded a Dutch shipbuilding company, Allseas, out of €100m in 2011.
 
-                         In late 2011, Stubbs was hired by Nobre, who at the time was seeking to regain control of money in the UK he said was for investment purposes but later transpired to be proceeds of the €100m fraud.
+                            Louanjli was found to have assisted Luis Nobre, a Portuguese confidence trickster who was at the heart of the plot to defraud Allseas. Nobre, who posed as a City trader with links to the Vatican, was imprisoned in 2016 for his role in the fraud.
 
-                         Weeks later, in a highly unusual move, the Mishcon de Reya lawyer switched sides to represent Allseas after it became apparent the company had been defrauded. Since then, Stubbs and Mishcon de Reya have helped the Dutch company recover its client’s money and pursue Nobre’s associates through litigation.
+                            In late 2011, Stubbs was hired by Nobre, who at the time was seeking to regain control of money in the UK he said was for investment purposes but later transpired to be proceeds of the €100m fraud.
 
-                         Mishcon de Reya said Stubbs regularly met with the Met over several years to provide information in relation to the fraud against Allseas. The meeting with the two detectives recounted in the Crimint report took place in October 2013.
+                            Weeks later, in a highly unusual move, the Mishcon de Reya lawyer switched sides to represent Allseas after it became apparent the company had been defrauded. Since then, Stubbs and Mishcon de Reya have helped the Dutch company recover its client’s money and pursue Nobre’s associates through litigation.
 
-                         During December’s application, Louanjli’s defence tried to introduce the Crimint report as evidence in the trial in an attempt to undermine the prosecution. The request failed after Tomlinson ruled the evidence was not relevant as it had no “material bearing” on the issues in the trial.
+                            Mishcon de Reya said Stubbs regularly met with the Met over several years to provide information in relation to the fraud against Allseas. The meeting with the two detectives recounted in the Crimint report took place in October 2013.
 
-                         However, across two days of hearings in early December, Louanjli’s QC, Mark Rainsford, described to the court the alleged contents of the Crimint report, in which the detectives set out their account of the meeting with Stubbs. The purpose of the meeting, according to the Crimint report, was the “pursuit of outstanding monies”.
+                            During December’s application, Louanjli’s defence tried to introduce the Crimint report as evidence in the trial in an attempt to undermine the prosecution. The request failed after Tomlinson ruled the evidence was not relevant as it had no “material bearing” on the issues in the trial.
 
-                         Citing the report, Rainsford alleged that Stubbs told the officers the ex-SAS sergeant “with alleged CIA contacts” was offering to facilitate an elaborate scheme intended to trick Nobre, who at the time was on bail.
+                            However, across two days of hearings in early December, Louanjli’s QC, Mark Rainsford, described to the court the alleged contents of the Crimint report, in which the detectives set out their account of the meeting with Stubbs. The purpose of the meeting, according to the Crimint report, was the “pursuit of outstanding monies”.
 
-                         Rainsford told the court the plan involved police temporarily returning Nobre’s passport to him to deceive him into thinking “his passport was being permanently returned and that proceedings would be terminated”. As part of this plan, he explained, Nobre would use the passport to access the €300m in the Swiss bank account.
+                            Citing the report, Rainsford alleged that Stubbs told the officers the ex-SAS sergeant “with alleged CIA contacts” was offering to facilitate an elaborate scheme intended to trick Nobre, who at the time was on bail.
 
-                         According to the QC, the Crimint report described how Stubbs told the officers the ex-SAS sergeant offered to arrange for £1m of this money to be paid to the Serious Organised Crime Agency – replaced in 2013 by the National Crime Agency – or into the Met’s pension fund “in order to ease the current austere environment.”
+                            Rainsford told the court the plan involved police temporarily returning Nobre’s passport to him to deceive him into thinking “his passport was being permanently returned and that proceedings would be terminated”. As part of this plan, he explained, Nobre would use the passport to access the €300m in the Swiss bank account.
 
-                         Rainsford told the court the officers rejected this offer and “pointed out to Stubbs in clear and strongly worded terms that this offer was interpreted as a bribe, money laundering and an attempt to deceive a suspect on bail”.
+                            According to the QC, the Crimint report described how Stubbs told the officers the ex-SAS sergeant offered to arrange for £1m of this money to be paid to the Serious Organised Crime Agency – replaced in 2013 by the National Crime Agency – or into the Met’s pension fund “in order to ease the current austere environment.”
 
-                         The QC alleged that Stubbs then repeated the offer from the ex-SAS sergeant a second time. “Again this was strongly rebuffed,” Rainsford said, and Stubbs “took this on board” before texting the ex-SAS officer with a brief message: “Too dangerous.”
+                            Rainsford told the court the officers rejected this offer and “pointed out to Stubbs in clear and strongly worded terms that this offer was interpreted as a bribe, money laundering and an attempt to deceive a suspect on bail”.
 
-                         While the judge did not make any adverse findings against Stubbs, he noted a “degree of consensus” between the prosecution and the defence “that some of the behaviour of Mike Stubbs of Mishcon de Reya has been questionable”. He also noted the plan Stubbs had allegedly relayed to police would have brought “further untold wealth of dubious origin into the United Kingdom”.
+                            The QC alleged that Stubbs then repeated the offer from the ex-SAS sergeant a second time. “Again this was strongly rebuffed,” Rainsford said, and Stubbs “took this on board” before texting the ex-SAS officer with a brief message: “Too dangerous.”
 
-                         In its correspondence with the Guardian, Mishcon de Reya said Stubbs did not make any offer or proposal to the police, but “simply relayed information in line with client instructions” so the police “could assess its credibility and take appropriate steps”.
+                            While the judge did not make any adverse findings against Stubbs, he noted a “degree of consensus” between the prosecution and the defence “that some of the behaviour of Mike Stubbs of Mishcon de Reya has been questionable”. He also noted the plan Stubbs had allegedly relayed to police would have brought “further untold wealth of dubious origin into the United Kingdom”.
 
-                         The firm said Stubbs was not in court when the allegations against him were raised and was therefore unable to challenge them at the time. If questioned, the firm continued, he would have given an explanation “corroborated by the contemporaneous records we have seen”. The firm said no action had ever been taken by the police against Stubbs.
+                            In its correspondence with the Guardian, Mishcon de Reya said Stubbs did not make any offer or proposal to the police, but “simply relayed information in line with client instructions” so the police “could assess its credibility and take appropriate steps”.
 
-                         Mishcon de Reya stressed that Stubbs relayed the intelligence operative’s offer to the detectives “dispassionately” and “did not agree with or endorse the proposal”. The firm said its lawyer considered the plot to trick Nobre into releasing funds from the Swiss bank as “misconceived”. It said Stubbs considered the information he was relaying to police to be “interesting but probably unreliable”.
-                         """),
-                         ("""
-                         Less than a month ago, Australia was the envy of much of the world. With daily new coronavirus cases in the single digits, it was feted as part of a group of “first mover” nations - countries like Taiwan, Singapore and New Zealand that acted decisively to quash coronavirus.
+                            The firm said Stubbs was not in court when the allegations against him were raised and was therefore unable to challenge them at the time. If questioned, the firm continued, he would have given an explanation “corroborated by the contemporaneous records we have seen”. The firm said no action had ever been taken by the police against Stubbs.
 
-                         In mid-June, after three months of tight restrictions and differing levels of lockdown, life was not quite back to normal, but as politicians liked to stress, it was almost Covid-normal.
+                            Mishcon de Reya stressed that Stubbs relayed the intelligence operative’s offer to the detectives “dispassionately” and “did not agree with or endorse the proposal”. The firm said its lawyer considered the plot to trick Nobre into releasing funds from the Swiss bank as “misconceived”. It said Stubbs considered the information he was relaying to police to be “interesting but probably unreliable”.
+                            """),
+                            ("""
+                            Less than a month ago, Australia was the envy of much of the world. With daily new coronavirus cases in the single digits, it was feted as part of a group of “first mover” nations - countries like Taiwan, Singapore and New Zealand that acted decisively to quash coronavirus.
 
-                         Restaurants, gyms and beaches across the country opened again, and in the southern state of Victoria residents were awaiting the day when premier Daniel Andrews would say they could “get on the beers” and return to the pub.
+                            In mid-June, after three months of tight restrictions and differing levels of lockdown, life was not quite back to normal, but as politicians liked to stress, it was almost Covid-normal.
 
-                         Travel was also back on the cards. There was talk of a bubble between Australia and New Zealand, and interstate border restrictions were on the verge of being eased.
+                            Restaurants, gyms and beaches across the country opened again, and in the southern state of Victoria residents were awaiting the day when premier Daniel Andrews would say they could “get on the beers” and return to the pub.
 
-                         But then, as a sunny autumn rolled into winter, infections began slowly rising in Melbourne.
+                            Travel was also back on the cards. There was talk of a bubble between Australia and New Zealand, and interstate border restrictions were on the verge of being eased.
 
-                         Just weeks later, the country has more than 3,000 active cases and daily new case numbers that are almost as high as the UK - with less than a third of the population. Five million residents of Melbourne have been thrown into their second lockdown, with no real sense of when it might end. Face masks are mandatory. Police patrol the Victorian state border. And the death toll is climbing. So what went wrong?
+                            But then, as a sunny autumn rolled into winter, infections began slowly rising in Melbourne.
 
-                         I’m scared of this. We all should be’
+                            Just weeks later, the country has more than 3,000 active cases and daily new case numbers that are almost as high as the UK - with less than a third of the population. Five million residents of Melbourne have been thrown into their second lockdown, with no real sense of when it might end. Face masks are mandatory. Police patrol the Victorian state border. And the death toll is climbing. So what went wrong?
 
-                         On 19 June, at a routine press conference, Victoria’s deputy chief medical officer Annaliese van Diemen announced that seven cases had been linked to security guards working at the Stamford Plaza hotel in Melbourne, where travellers were held under Australia’s mandatory 14-day quarantine rule for international arrivals. The group were believed to have breached social distancing rules while socialising.
+                            I’m scared of this. We all should be’
 
-                         Andrews said the source of the transmission could have been as fleeting as sharing a cigarette lighter. He warned the country was facing a “wicked enemy”. Day by day the cases continued to rise, until there were dozens linked to two hotels.
+                            On 19 June, at a routine press conference, Victoria’s deputy chief medical officer Annaliese van Diemen announced that seven cases had been linked to security guards working at the Stamford Plaza hotel in Melbourne, where travellers were held under Australia’s mandatory 14-day quarantine rule for international arrivals. The group were believed to have breached social distancing rules while socialising.
 
-                         A judicial inquiry into the outbreak this week heard that many if not all of the thousands of new cases in June and July could be linked back to the quarantine hotel outbreaks.
+                            Andrews said the source of the transmission could have been as fleeting as sharing a cigarette lighter. He warned the country was facing a “wicked enemy”. Day by day the cases continued to rise, until there were dozens linked to two hotels.
 
-                         The inquiry will be focused on the state government’s decision to use private security contractors, who in turn used sub-contractors, some with reportedly as little as five minutes in training, while in other states, police were on guard.
+                            A judicial inquiry into the outbreak this week heard that many if not all of the thousands of new cases in June and July could be linked back to the quarantine hotel outbreaks.
 
-                         Initially, the authorities launched a testing blitz on hotspots and issued a stay-at-home order – later beefed up to a police-enforced lockdown - for 3,000 residents of nine Melbourne public housing towers.
+                            The inquiry will be focused on the state government’s decision to use private security contractors, who in turn used sub-contractors, some with reportedly as little as five minutes in training, while in other states, police were on guard.
 
-                         But the cases kept coming. On 7 July Victoria recorded 191 new coronavirus cases, enough to prompt Andrews to announce a city-wide lockdown for at least six weeks.
+                            Initially, the authorities launched a testing blitz on hotspots and issued a stay-at-home order – later beefed up to a police-enforced lockdown - for 3,000 residents of nine Melbourne public housing towers.
 
-                         “I know a lot of people aren’t scared because this feels like something happening to other people in other parts of the world,” Andrews said. “But you should be scared of this. I’m scared of this. We all should be.”
+                            But the cases kept coming. On 7 July Victoria recorded 191 new coronavirus cases, enough to prompt Andrews to announce a city-wide lockdown for at least six weeks.
 
-                         Now, over two weeks since stage three lockdown commenced, there are 4,213 new cases of coronavirus reported in Victoria alone, with 30 deaths. A total of 201 patients are in hospital, with 41 in intensive care.
+                            “I know a lot of people aren’t scared because this feels like something happening to other people in other parts of the world,” Andrews said. “But you should be scared of this. I’m scared of this. We all should be.”
 
-                         Australia hit a new record of 484 cases in one day on Wednesday. Melbourne residents now must wear a mask when outside home, or face a $200 fine.
+                            Now, over two weeks since stage three lockdown commenced, there are 4,213 new cases of coronavirus reported in Victoria alone, with 30 deaths. A total of 201 patients are in hospital, with 41 in intensive care.
 
-                         On Friday, six more deaths were recorded, and 300 new cases. Andrews said the army would be deployed to knock on the doors of those positive cases who had not answered the phone to contact tracers.
+                            Australia hit a new record of 484 cases in one day on Wednesday. Melbourne residents now must wear a mask when outside home, or face a $200 fine.
 
-                         This week, Andrews revealed nine in 10 people who had symptoms before getting tested in Victoria did not isolate before their test, and more than half did not isolate while waiting for their results. Many of them continued to work because they needed the money. But Andrews said a debate on the insecure work for many of those affected could be had later.
+                            On Friday, six more deaths were recorded, and 300 new cases. Andrews said the army would be deployed to knock on the doors of those positive cases who had not answered the phone to contact tracers.
 
-                         The return of Covid-19 has hit harder than the first wave. Michael, a healthcare worker in Brunswick in Melbourne’s inner north, said it felt like every minor decision in his life held great importance, and that was exhausting.
+                            This week, Andrews revealed nine in 10 people who had symptoms before getting tested in Victoria did not isolate before their test, and more than half did not isolate while waiting for their results. Many of them continued to work because they needed the money. But Andrews said a debate on the insecure work for many of those affected could be had later.
 
-                         “It’s like you never get a chance to really recharge your battery, there’s always something worrying on the news,” he said. “I hate it.”
+                            The return of Covid-19 has hit harder than the first wave. Michael, a healthcare worker in Brunswick in Melbourne’s inner north, said it felt like every minor decision in his life held great importance, and that was exhausting.
 
-                         And the outbreak is spreading across the country. The state of New South Wales restricted entry for people from Victoria, dramatically closing the border between Australia’s two most populous states for the first time since the 1919 flu pandemic. But it wasn’t enough to stop an outbreak linked to the southern state spreading through a popular hotel on an arterial road, and resulting in dozens of new cases at locations across metropolitan Sydney and beyond.
+                            “It’s like you never get a chance to really recharge your battery, there’s always something worrying on the news,” he said. “I hate it.”
 
-                         So far New South Wales has resisted returning to a harder lockdown, with case numbers much lower than Victoria, and more success in tracing cases to known outbreaks.
+                            And the outbreak is spreading across the country. The state of New South Wales restricted entry for people from Victoria, dramatically closing the border between Australia’s two most populous states for the first time since the 1919 flu pandemic. But it wasn’t enough to stop an outbreak linked to the southern state spreading through a popular hotel on an arterial road, and resulting in dozens of new cases at locations across metropolitan Sydney and beyond.
 
-                         On Thursday the government announced the nation’s biggest deficit since the second world war, reaching $86bn (£48bn) in the last financial year, and forecast to blow out to $184bn in 2020-21.
+                            So far New South Wales has resisted returning to a harder lockdown, with case numbers much lower than Victoria, and more success in tracing cases to known outbreaks.
 
-                         The numbers of new cases in Victoria are stabilising, but victory is a long way away.
+                            On Thursday the government announced the nation’s biggest deficit since the second world war, reaching $86bn (£48bn) in the last financial year, and forecast to blow out to $184bn in 2020-21.
 
-                         Andrews warned: “We shouldn’t lose sight of the fact that even with stability, that will mean some people die, that will mean that some people are gravely ill, and it will mean based on recent international evidence that some people will not shake this like a common cold, they will have lasting impacts.”
-                         """)]
-    let authorAndDataCont =
-                        [("Writen by Daniel Strauss at Fri 24 Jul 2020 10.30 BST"),
-                        ("Writen by Harrys Davies at Fri 24 Jul 2020 11.00 BST"),
-                        ("Writen by Josh Taylor at Fri 24 Jul 2020 14.03 BST")]
-    let imageForCell =
-                        ["0_cell", "1_cell", "2_cell"]
+                            The numbers of new cases in Victoria are stabilising, but victory is a long way away.
+
+                            Andrews warned: “We shouldn’t lose sight of the fact that even with stability, that will mean some people die, that will mean that some people are gravely ill, and it will mean based on recent international evidence that some people will not shake this like a common cold, they will have lasting impacts.”
+                            """)]
+    let authorForSC: [String] =
+                            [("Writen by Daniel Strauss at Fri 24 Jul 2020 10.30 BST"),
+                            ("Writen by Harrys Davies at Fri 24 Jul 2020 11.00 BST"),
+                            ("Writen by Josh Taylor at Fri 24 Jul 2020 14.03 BST")]
+    let imagesForSC =
+                            ["0_cell", "1_cell", "2_cell"]
     
-        
+    var newsModelForFC: [NewsModel] = []
+    var newsModelForSC: [NewsModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var newsModel1, newsModel2: [NewsModel]
+        newsModel1 = []
+        newsModel2 = []
+        
+        for i in 0..<titleForFC.count {
+            newsModel1.append(NewsModel(author: authorForFC[i], detail: detailForFC[i], title: titleForFC[i], imageName: imagesForFC[i]))
+        }
+        for i in 0..<titleForSC.count {
+            newsModel2.append(.init(author: authorForSC[i], detail: detailForSC[i], title: titleForSC[i], imageName: imagesForSC[i]))
+        }
+        
+        newsModelForFC = newsModel1
+        newsModelForSC = newsModel2
+            
         
         firstCollectionView.delegate = self
         secondCollectionView.delegate = self
@@ -367,72 +384,61 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         firstCollectionView.dataSource = self
         secondCollectionView.dataSource = self
         
-
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let potato2 = viewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
-        
+
         if collectionView == firstCollectionView{
             let potato = viewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
-            
-            potato.cellPassImage    = images      [indexPath.row]
-            potato.titlePassString  = titleTextElements[indexPath.row]
-            potato.textPassString   = descTextArr [indexPath.row]
-            potato.authorPassString = authorArr   [indexPath.row]
-            
+
+            potato.cellPassImage    = imagesForFC [indexPath.row]
+            potato.titlePassString  = titleForFC  [indexPath.row]
+            potato.textPassString   = detailForFC   [indexPath.row]
+            potato.authorPassString = authorForFC [indexPath.row]
+
             self.navigationController?.pushViewController(potato, animated: true)
             present(potato, animated: true)
-            
-            
+
+
         } else {
-            
-            potato2.cellPassImage    = imageForCell     [indexPath.row]
-            potato2.titlePassString  = titleForCell     [indexPath.row]
-            potato2.textPassString   = descForCell      [indexPath.row]
-            potato2.authorPassString = authorAndDataCont[indexPath.row]
-            
+
+            potato2.cellPassImage    = imagesForSC [indexPath.row]
+            potato2.titlePassString  = titleForSC  [indexPath.row]
+            potato2.textPassString   = detailForSC   [indexPath.row]
+            potato2.authorPassString = authorForSC [indexPath.row]
+
             self.navigationController?.pushViewController(potato2, animated: true)
             present(potato2, animated: true)
-            
-            
+
+
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == firstCollectionView){
-            return images.count
+            return newsModelForFC.count
         } else {
-            return titleForCell.count
+            return newsModelForSC.count
         }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let firstCell = firstCollectionView.dequeueReusableCell(withReuseIdentifier: "firstCell", for: indexPath) as! FirstCollectionViewCell
-        
-        if collectionView == firstCollectionView {
-            
-            firstCell.imageView.image = UIImage(named: images[indexPath.row])
-            firstCell.titleLabelFC.text = titleTextElements[indexPath.row]
-            firstCell.descLabelFC.text = descTextArr[indexPath.row]
-            firstCell.authorLabelFC.text = authorArr[indexPath.row]
+        let firstCell = collectionView.dequeueReusableCell(withReuseIdentifier: "firstCell", for: indexPath) as! FirstCollectionViewCell
+        let newsModel = (collectionView == firstCollectionView ? newsModelForFC : newsModelForSC)[indexPath.item]
+
+    
+        firstCell.imageView.image    = newsModel.image
+        firstCell.titleLabelFC.text  = newsModel.title
+        firstCell.descLabelFC.text   = newsModel.detail
+        firstCell.authorLabelFC.text = newsModel.author
             
             return firstCell
             
-        } else {
-            
-            let secondCell = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "secondCell", for: indexPath) as! SecondCollectionViewCell
-            
-            secondCell.imageViewSC.image = UIImage(named: imageForCell[indexPath.row])
-            secondCell.titleLabelSC.text = titleForCell[indexPath.row]
-            secondCell.descLabelSC.text = descForCell[indexPath.row]
-            secondCell.authorLabelSC.text = authorAndDataCont[indexPath.row]
-            
-            return secondCell
         }
-    }
+        
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -455,12 +461,3 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 }
 
-//    @IBAction func readMoreBtn(_ sender: Any) {
-//
-//        let aboutVC = ViewController(withStoryboarName: "Main", "AboutViewController") as! AboutViewController
-//
-//        aboutVC.titlePassString  = titleLabel.text!
-//        aboutVC.textPassString   = labelText.text!
-//
-//        present(aboutVC, animated: true)
-//}
